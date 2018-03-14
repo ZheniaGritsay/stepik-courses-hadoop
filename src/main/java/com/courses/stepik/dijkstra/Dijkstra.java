@@ -1,4 +1,7 @@
-package com.courses.stepik;
+package com.courses.stepik.dijkstra;
+
+import com.courses.stepik.Main;
+import com.courses.stepik.Task;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -6,9 +9,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-public class Dijkstra {
+public class Dijkstra implements Task {
     private static final int INF = Integer.MAX_VALUE;
 
+    @Override
     public void exec() {
         Object[] data = readGraphData();
         Map<Integer, Integer> vertexes = dijkstra((Set<Integer>) data[0], (Integer) data[2], (int[][]) data[1]);
