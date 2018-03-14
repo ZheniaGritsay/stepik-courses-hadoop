@@ -6,6 +6,6 @@ public class PageRankReducer implements Task {
 
     @Override
     public void exec() {
-        
+
     }
 }
