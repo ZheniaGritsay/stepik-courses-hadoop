@@ -1,6 +1,5 @@
 package com.courses.stepik.dijkstra;
 
-import com.courses.stepik.Main;
 import com.courses.stepik.Task;
 
 import java.io.BufferedReader;
@@ -54,6 +53,7 @@ public class Dijkstra implements Task {
                 }
             }
 
+            // TODO: 3/15/2018 optimize
             PriorityQueue<Map.Entry<Integer, Integer>> temp = pq;
             pq = new PriorityQueue<>(c);
             pq.addAll(temp);
@@ -87,7 +87,8 @@ public class Dijkstra implements Task {
         int destV = 0;
         Set<Integer> vertexes = new HashSet<>();
         int[][] weights = null;
-        try (FileReader fr = new FileReader(new File(Main.class.getClassLoader().getResource("graph.txt").getPath()));
+        try (FileReader fr = new FileReader(new File(Dijkstra.class.getClassLoader()
+                .getResource("graph.txt").getPath()));
              BufferedReader br = new BufferedReader(fr)) {
 
             String line;

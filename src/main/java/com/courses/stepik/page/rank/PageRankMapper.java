@@ -12,7 +12,8 @@ public class PageRankMapper implements Task {
 
     @Override
     public void exec() {
-        try (FileReader fr = new FileReader(new File(Main.class.getClassLoader().getResource("page_rank.txt").getPath()));
+        try (FileReader fr = new FileReader(new File(Main.class.getClassLoader()
+                .getResource("page_rank_mapper.txt").getPath()));
              BufferedReader br = new BufferedReader(fr)) {
 
             String line;

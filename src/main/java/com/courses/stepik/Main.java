@@ -3,11 +3,12 @@ package com.courses.stepik;
 import com.courses.stepik.dijkstra.BFSMapReduce;
 import com.courses.stepik.dijkstra.Dijkstra;
 import com.courses.stepik.page.rank.PageRankMapper;
+import com.courses.stepik.page.rank.PageRankReducer;
 
 public class Main {
 
     public static void main(String[] args) {
-        Task task = createPageRank();
+        Task task = createPageRankReducer();
         task.exec();
     }
 
@@ -19,7 +20,11 @@ public class Main {
         return new BFSMapReduce();
     }
 
-    static Task createPageRank() {
+    static Task createPageRankMapper() {
         return new PageRankMapper();
+    }
+
+    static Task createPageRankReducer() {
+        return new PageRankReducer();
     }
 }
