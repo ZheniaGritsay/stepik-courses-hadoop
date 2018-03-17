@@ -1,4 +1,6 @@
-package com.courses.stepik;
+package com.courses.stepik.dijkstra;
+
+import com.courses.stepik.Task;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -7,11 +9,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class BFSMapReduce {
-//    private static final double INF = Double.POSITIVE_INFINITY;
+public class BFSMapReduce implements Task {
 
+    @Override
     public void exec() {
-        try (FileReader fr = new FileReader(new File(Main.class.getClassLoader().getResource("bfs_graph.txt").getPath()));
+        try (FileReader fr = new FileReader(new File(BFSMapReduce.class.getClassLoader()
+                .getResource("bfs_graph.txt").getPath()));
              BufferedReader br = new BufferedReader(fr)) {
 
             String line;
